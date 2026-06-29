@@ -142,3 +142,10 @@ console.log(result);
 // () - grupira del od regularniot izraz
 
 //---------------------------------------------------------------------------------------------------------
+
+//Homework
+// 1. Local module for file write and read
+// 2. use append to append data and then read the new data appended
+// 3. Read new data when change has been made with the append
+// BONUS
+// async/await should be wrapped in try/catch
