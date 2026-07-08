@@ -11,7 +11,7 @@ const getCalculator = async(req, res) => {
     }
 }
 
-const postCalculator = (req, res) => {
+const postCalculator = async(req, res) => {
     
     const {op, a, b} = req.body;
 
