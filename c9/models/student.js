@@ -54,7 +54,7 @@ const remove = async(index) => {
     let file = await readFile();
     let fileData = JSON.parse(file);
     let newFileData = fileData.filter((_, i) => index !==i);
-    await write(JSON.stringify(newFileData));
+    await writeFile(JSON.stringify(newFileData));
 }
 
 module.exports = {

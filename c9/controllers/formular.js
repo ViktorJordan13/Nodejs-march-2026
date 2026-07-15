@@ -1,4 +1,4 @@
-const { list, add, remove } = require("../models/students");
+const { list, add, remove } = require("../models/student");
 
 const getForm = (req, res) => {
     res.render("formular");

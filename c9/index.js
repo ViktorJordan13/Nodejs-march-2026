@@ -10,3 +10,37 @@
 // -> Controller (tuka ni e programerskata logika, odnosno handler) ->
 // -> Model (Kako ke ni izgleda entitetot(student) i CRUD operaciite za istiot)->
 // -> databaza (Kaj nas toa ke bide fajlot students.json)
+
+const express = require("express");
+const {
+    getForm,
+    postForm,
+    getStudents,
+    getDelete
+} = require("./controllers/formular");
+
+const app = express();
+
+app.set("view engine", "ejs");
+
+app.use(express.urlencoded({ extended: true })); //body-parser
+// It is used when we have req.body => POST, PUT, PATCH, DELETE
+// When extended is TRUE req.body can be any type (string, object, array, number, boolean, undefined, null)
+// When extended is FALSE req.body can be only string or array
+app.use(express.static("public")); // You will understand this more when you get to React.js
+// static assets reffer to files that are served to the client without any modification by the server
+// public folder contains data that the server will not process
+
+app.get("/form", getForm);
+app.post("/form", postForm);
+app.get("/students", getStudents);
+app.get("/delete", getDelete);
+
+app.listen(8000, (err) => {
+    if (err) console.log(err);
+    console.log("Server started at port: 8000");
+});
+
+// Za priprema vo ponedelnik pred sami da resavate zadaca:
+// povtorete se sto ke vi treba za ovaa aplikacija od ovoj cas
+// BONUS setete se i napravete ja funkcionalnosta za edit sto ni fali vo ovoj cas
